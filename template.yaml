@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Timeout: 300
+
+Resources:
+  LambdaDemoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.lambda_demo.aws.function.LambdaDemo::handleRequest
+      Runtime: java8
+      MemorySize: 512
+      Events:
+        GatewayApi:
+          Type: Api
+          Properties:
+            Path: /test
+            Method: get
+
