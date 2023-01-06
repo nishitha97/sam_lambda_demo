@@ -23,7 +23,7 @@ public class LambdaDemo implements RequestHandler<APIGatewayProxyRequestEvent, A
                 .withHeaders(applicationHeaders);
 
         try {
-            logger.info("========== Task Executed Successfully =================");
+            //TODO you may write the logic of your lambda function here
 
             return response
                     .withStatusCode(200)
